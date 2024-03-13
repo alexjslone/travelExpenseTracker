@@ -32,6 +32,26 @@
 </html>
 
 <script>
+//testing out the currency API 
+
+const apiUrl = 'https://openexchangerates.org/api/latest.json?app_id=a43f78f28245465fb19144d8cede0a7b';
+fetch(apiUrl)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Extract exchange rate for USD from response
+        const usdExchangeRate = data.rates.USD;
+        console.log('Exchange rate for USD:', usdExchangeRate);
+    })
+    .catch(error => {
+        console.error('Error fetching exchange rates:', error);
+    });
+
+
 //Define an array to store expenses
 let expenses = [];
 
@@ -51,6 +71,7 @@ function addExpense() {
 
     // Add the expense object to the expenses array
     expenses.push(expense);
+    console.log(expenses);
 
     // Update the summary
     updateSummary();
