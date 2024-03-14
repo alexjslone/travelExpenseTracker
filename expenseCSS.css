@@ -3,6 +3,7 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #f0f0f0;
 }
 .container {
     max-width: 600px;
@@ -48,7 +49,11 @@ button {
     border-radius: 4px;
     background-color: #007bff;
     color: #fff;
-    cursor: pointer;}
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
 img {
     display: block; /* Ensures margin:auto works */
     margin: 0 auto; /* Centers the image */
@@ -59,7 +64,9 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
     }
 
   
