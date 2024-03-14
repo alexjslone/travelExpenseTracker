@@ -33,7 +33,7 @@
 
 <script>
 //testing out the currency API 
-let thaiBahtRate;
+var thaiBahtRate;
 const apiUrl = 'https://openexchangerates.org/api/latest.json?app_id=a43f78f28245465fb19144d8cede0a7b&symbols=USD,THB';
 fetch(apiUrl)
     .then(response => {
@@ -45,7 +45,7 @@ fetch(apiUrl)
     .then(data => {
         // Extract exchange rate for USD from response
         
-        const thaiBahtRate = data.rates.THB;
+        thaiBahtRate = data.rates.THB;
         console.log('Exchange rate for USD from Thai Baht:', thaiBahtRate);
         updateSummary();
     })
@@ -70,7 +70,7 @@ function addExpense() {
         category: category,
         price: price
     };
-
+    console.log(thaiBahtRate);
     // Add the expense object to the expenses array
     expenses.push(expense);
     console.log(expenses);
