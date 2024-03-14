@@ -81,9 +81,6 @@ function addExpense() {
     updateSummary();
 }
 
-
-
-// Function to update the summary
 function updateSummary() {
     // Initialize an object to store totals for each category
     let categoryTotals = {};
@@ -105,5 +102,29 @@ function updateSummary() {
         summaryElement.innerHTML += `<p>${category}: $${total.toFixed(2)}</p>`;
     }
 }
+
+/*
+// Function to update the summary
+function updateSummary() {
+    // Initialize an object to store totals for each category
+    let categoryTotals = {};
+
+    // Calculate totals for each category
+    expenses.forEach(expense => {
+        if (categoryTotals[expense.category]) {
+            categoryTotals[expense.category] += (expense.price/thaiBahtRate);
+        } else {
+            categoryTotals[expense.category] = (expense.price/thaiBahtRate);
+        }
+    });
+
+    // Display the summary
+    let summaryElement = document.getElementById("summary");
+    summaryElement.innerHTML = "";
+    for (let category in categoryTotals) {
+        let total = categoryTotals[category];
+        summaryElement.innerHTML += `<p>${category}: $${total.toFixed(2)}</p>`;
+    }
+}*/
 </script>
 
